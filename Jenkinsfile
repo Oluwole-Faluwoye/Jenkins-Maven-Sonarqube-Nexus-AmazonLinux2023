@@ -13,6 +13,12 @@ pipeline {
   }
 
   stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    
     stage('Validate Project') {
       steps {
         sh 'mvn validate'
