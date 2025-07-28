@@ -7,6 +7,11 @@ def COLOR_MAP = [
 pipeline {
   agent any
 
+  environment {
+    PATH = "/opt/maven/bin:$PATH"
+    JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-11.0.25.0.9-1.amzn2.0.2.x86_64"
+  }
+
   tools {
     jdk 'Java11'          // Must match the name configured in Jenkins under JDK installations
     maven 'Maven-3.9.6'   // Must match the name you configured for Maven in Global Tool Configuration
